@@ -35,8 +35,8 @@
                         <v-icon size="small"> mdi-chevron-left </v-icon>
                       </v-btn>
                       <div class="text-capitalize p-l-10 p-r-10">
-                        <span v-if="periodoCalendario">
-                          {{ dateFormat(periodoCalendario, "MMMM yyyy") }}
+                        <span v-if="$refs.calendar">
+                          {{ $refs.calendar.title }}
                         </span>
                       </div>
                       <v-btn
@@ -80,6 +80,7 @@
                 </v-toolbar>
               </v-sheet>
               <v-sheet height="600">
+                <h2>v-model value: {{ focus }}</h2>
                 <v-calendar
                   ref="calendar"
                   v-model="focus"
@@ -99,7 +100,6 @@
                   @click:more="viewMoreEvents"
                   @click:event="iniciarReserva"
                   @change="changeEvents"
-                  :event-more-text="'Mais'"
                 >
                   <template v-slot:event="{ event }">
                     <div
@@ -172,7 +172,7 @@ export default {
   },
   data() {
     return {
-      focus: "",
+      focus: new Date().toISOString().substring(0, 10),
       events: [],
       categories: [],
       type: "month",
@@ -247,9 +247,11 @@ export default {
       this.focus = "";
     },
     prev() {
+      console.log(this.$refs.calendar.title);
       this.$refs.calendar.prev();
     },
     next() {
+      console.log(this.$refs.calendar.title);
       this.$refs.calendar.next();
     },
     iniciarReserva(nativeEvent, { event }) {

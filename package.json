@@ -16,9 +16,10 @@
     "vue": "^3.5.18",
     "lodash": "^4.17.15",
     "date-fns": "^3.6.0",
-    "vuetify": "^3.10.0",
+    "vuetify": "^3.10.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "@mdi/font": "^7.2.96"
+    "@mdi/font": "^7.2.96",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
