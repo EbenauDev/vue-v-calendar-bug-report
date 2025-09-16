@@ -1,10 +1,5 @@
 <template>
   <div class="app-content">
-    <AppPageTitle
-      title="Reserva de espaços"
-      subtitle="Visualize o quadro de horários e inicie uma reserva."
-      :breadcrumbs="breadcrumbs"
-    ></AppPageTitle>
     <section class="row m-0">
       <v-row class="m-0 w-100">
         <v-col cols="12" xl="12" lg="12" md="12" class="m-t-10">
